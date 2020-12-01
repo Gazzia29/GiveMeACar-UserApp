@@ -1,7 +1,9 @@
 <template>
 	<div class="list">
 		<div class="label">{{ label }}</div>
-		<slot></slot>
+		<div class="listItems">
+			<slot></slot>
+		</div>
 	</div>
 </template>
 
@@ -24,5 +26,10 @@
 		font-size: 14px;
 		color: #161719;
 		margin-bottom: 7px;
+	}
+	.listItems {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
 	}
 </style>

@@ -1,56 +1,55 @@
 <template>
 	<ion-page>
 		<ion-content :fullscreen="true">
-			<ion-header collapse="condense">
-				<ion-toolbar>
-					<ion-title size="large">Recherche</ion-title>
-				</ion-toolbar>
-			</ion-header>
 			<div class="head">
 				<IonButton color="white" class="button"
-					><IonIcon :icon="filter" class="buttonIcon"></IonIcon>filtres (2 actifs)</IonButton
+					><IonIcon :icon="filter" class="buttonIcon"></IonIcon>filtres</IonButton
 				>
 			</div>
 			<div class="greyBox">
 				<List label="Véhicules disponibles" class="list">
-					<Card>Fiat 130 Berlina <strong>13 janvier 2006</strong></Card>
+					<Card v-for="car in cars" :key="car" :id="car.id">
+						<CardText>
+							{{ car.name }}
+							<strong>{{ car.date }}</strong>
+						</CardText>
+						<CardImage :path="car.img"></CardImage>
+					</Card>
 				</List>
 			</div>
-			<!-- content -->
 		</ion-content>
 	</ion-page>
 </template>
 
 <script lang="ts">
-	import {
-		IonPage,
-		IonHeader,
-		IonToolbar,
-		IonTitle,
-		IonContent,
-		IonButton,
-		IonIcon,
-	} from "@ionic/vue";
+	import {IonPage, IonContent, IonButton, IonIcon} from "@ionic/vue";
 	import {filter} from "ionicons/icons";
+	import {cars} from "@/cars.ts";
 
 	import List from "@/components/List.vue";
 	import Card from "@/components/Card.vue";
+	import CardText from "@/components/CardText.vue";
+	import CardImage from "@/components/CardImage.vue";
 
 	export default {
 		name: "Recherche",
 		components: {
-			IonHeader,
-			IonToolbar,
-			IonTitle,
 			IonContent,
 			IonPage,
 			IonButton,
 			IonIcon,
 			List,
 			Card,
+			CardText,
+			CardImage,
 		},
 		setup() {
 			return {filter};
+		},
+		data() {
+			return {
+				cars: cars.filter((c) => !c.realEndDate && !c.startDate),
+			};
 		},
 	};
 </script>

@@ -14,12 +14,11 @@
 
 <script>
 	import {IonAvatar, IonItem, IonLabel} from "@ionic/vue";
-	import {defineComponent} from "vue";
 
-	export default defineComponent({
+	export default {
 		name: "WelcomeBack",
 		components: {IonAvatar, IonItem, IonLabel},
-	});
+	};
 </script>
 
 <style>

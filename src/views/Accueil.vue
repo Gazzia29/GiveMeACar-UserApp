@@ -1,57 +1,42 @@
 <template>
 	<ion-page>
-		<!-- <ion-header> -->
-		<WelcomeBack></WelcomeBack>
-		<!-- </ion-header> -->
 		<ion-content :fullscreen="true">
-			<ion-header collapse="condense">
-				<ion-toolbar>
-					<ion-title size="large">Home</ion-title>
-				</ion-toolbar>
-			</ion-header>
-			<div class="greyBox">
-				<IonButton
-					color="secondary"
-					class="button"
-					@click="
-						() => {
-							router.push('/tabs/recherche');
-						}
-					"
-					><IonIcon :icon="search"></IonIcon>Trouver un véhicule</IonButton
-				>
+			<WelcomeBack></WelcomeBack>
+			<div class="greyBox" :class="location ? 'hasLocation' : ''">
+				<IonButton v-if="!location" color="secondary" class="button" router-link="/recherche">
+					<IonIcon :icon="search"></IonIcon>
+					Trouver un véhicule
+				</IonButton>
+				<LocationCard v-if="location" :location="location"></LocationCard>
 				<List label="Réservations passées" class="list">
-					<Card>Fiat 130 Berlina <strong>13 janvier 2006</strong></Card>
+					<Card v-for="car in cars" :key="car" :id="car.id">
+						<CardText>
+							{{ car.name }}
+							<strong>{{ car.date }}</strong>
+						</CardText>
+						<CardImage :path="car.img"></CardImage>
+					</Card>
 				</List>
 			</div>
-			<!-- content -->
 		</ion-content>
 	</ion-page>
 </template>
 
 <script lang="ts">
-	import {useRouter} from "vue-router";
-	import {
-		IonPage,
-		IonHeader,
-		IonToolbar,
-		IonTitle,
-		IonContent,
-		IonButton,
-		IonIcon,
-	} from "@ionic/vue";
+	import {IonPage, IonContent, IonButton, IonIcon} from "@ionic/vue";
 	import WelcomeBack from "@/components/WelcomeBack.vue";
 	import List from "@/components/List.vue";
 	import Card from "@/components/Card.vue";
-
+	import CardText from "@/components/CardText.vue";
+	import CardImage from "@/components/CardImage.vue";
+	import LocationCard from "@/components/LocationCard.vue";
 	import {search} from "ionicons/icons";
+
+	import {cars} from "@/cars.ts";
 
 	export default {
 		name: "Accueil",
 		components: {
-			IonHeader,
-			IonToolbar,
-			IonTitle,
 			IonContent,
 			IonPage,
 			IonButton,
@@ -59,12 +44,19 @@
 			WelcomeBack,
 			List,
 			Card,
+			CardText,
+			CardImage,
+			LocationCard,
 		},
 		setup() {
-			const router = useRouter();
 			return {
-				router,
 				search,
+			};
+		},
+		data() {
+			return {
+				cars: cars.filter((c) => c.realEndDate),
+				location: cars.find((c) => c.startDate && !c.realEndDate),
 			};
 		},
 	};
@@ -80,8 +72,11 @@
 		box-sizing: border-box;
 		display: flex;
 		flex-direction: column;
-		/* justify-content: center; */
 		align-items: center;
+	}
+	.greyBox.hasLocation {
+		height: calc(100% - 60px);
+		margin-top: 60px;
 	}
 	.button {
 		--box-shadow: "none";
