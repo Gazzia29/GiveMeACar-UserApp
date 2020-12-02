@@ -11,14 +11,22 @@ const routes: Array<RouteRecordRaw> = [
 		component: Tabs,
 		children: [
 			{
-				path: "",
+				path: "/",
+				redirect: "/home",
+			},
+			{
+				name: "home",
+				path: "home",
 				component: Accueil,
 			},
 			{
+				name: "recherche",
 				path: "recherche",
+				alias: "/",
 				component: () => import("@/views/Recherche.vue"),
 			},
 			{
+				name: "voiture",
 				path: "voiture",
 				redirect: "/voiture/1",
 			},
