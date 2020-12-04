@@ -2,8 +2,13 @@ import {createRouter, createWebHistory} from "@ionic/vue-router";
 import {RouteRecordRaw} from "vue-router";
 import Tabs from "../views/Tabs.vue";
 import Accueil from "@/views/Accueil.vue";
-// import Recherche from "@/views/Recherche.vue";
-// import Voiture from "@/views/Voiture.vue";
+import Recherche from "@/views/Recherche.vue";
+import Voiture from "@/views/Voiture.vue";
+import Compte from "@/views/Compte.vue";
+import Contact from "@/views/Contact.vue";
+import ModifierCompteClient from "@/views/ModifierCompteClient.vue";
+import Inscription from "@/views/Inscription.vue";
+import Monstre from "@/views/Monstre.vue";
 
 const routes: Array<RouteRecordRaw> = [
 	{
@@ -11,7 +16,7 @@ const routes: Array<RouteRecordRaw> = [
 		component: Tabs,
 		children: [
 			{
-				path: "/",
+				path: "",
 				redirect: "/home",
 			},
 			{
@@ -22,8 +27,7 @@ const routes: Array<RouteRecordRaw> = [
 			{
 				name: "recherche",
 				path: "recherche",
-				alias: "/",
-				component: () => import("@/views/Recherche.vue"),
+				component: Recherche,
 			},
 			{
 				name: "voiture",
@@ -32,8 +36,33 @@ const routes: Array<RouteRecordRaw> = [
 			},
 			{
 				path: "voiture/:id",
-				component: () => import("@/views/Voiture.vue"),
+				component: Voiture,
 				props: true,
+			},
+			{
+				name: "compte",
+				path: "compte",
+				component: Compte,
+			},
+			{
+				name: "contact",
+				path: "contact",
+				component: Contact,
+			},
+			{
+				name: "compte/edit",
+				path: "compte/edit",
+				component: ModifierCompteClient,
+			},
+			{
+				name: "inscription",
+				path: "inscription",
+				component: Inscription,
+			},
+			{
+				name: "animaltotem",
+				path: "animaltotem",
+				component: Monstre,
 			},
 		],
 	},

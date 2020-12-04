@@ -16,14 +16,6 @@
 	import BackButton from "@/components/BackButton.vue";
 	import {cars} from "@/cars.ts";
 
-	// function transformToJson(response) {
-	// 	if (response.ok) {
-	// 		return response.json();
-	// 	}
-
-	// 	throw Error("Content not loaded");
-	// }
-
 	export default {
 		name: "Voiture",
 		props: ["id"],
@@ -32,16 +24,7 @@
 			IonPage,
 			BackButton,
 		},
-		methods: {
-			// fillList: function(json) {
-			// 	console.log("json :>> ", json);
-			// 	json
-			// 		.filter((p) => p.name != null)
-			// 		.forEach((p) => {
-			// 			this.agences.push(p);
-			// 		});
-			// },
-		},
+		methods: {},
 		data() {
 			return {
 				cars,
@@ -49,11 +32,6 @@
 				agences: [],
 			};
 		},
-		// mounted() {
-		// 	fetch("http://localhost:8080/")
-		// 		.then(transformToJson)
-		// 		.then(this.fillList);
-		// },
 		unmounted() {
 			console.log("bye bye 😀");
 		},

@@ -1,23 +1,30 @@
 <template>
-	<div class="flex-container">
+	<router-link class="flex-container" to="/compte">
 		<ion-item lines="none">
 			<ionAvatar slot="start">
 				<img src="../assets/avatar.jpg" />
 			</ionAvatar>
 			<ion-label color="white">
 				<p class="text text1">Vous êtes de retour</p>
-				<p class="text text2">Visiteur</p>
+				<p class="text text2">Jean-Marc</p>
 			</ion-label>
 		</ion-item>
-	</div>
+	</router-link>
 </template>
 
 <script>
+	import {useRouter} from "vue-router";
 	import {IonAvatar, IonItem, IonLabel} from "@ionic/vue";
 
 	export default {
 		name: "WelcomeBack",
 		components: {IonAvatar, IonItem, IonLabel},
+		setup() {
+			const router = useRouter();
+			return {
+				router,
+			};
+		},
 	};
 </script>
 

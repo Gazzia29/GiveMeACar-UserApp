@@ -1,16 +1,20 @@
 <template>
-	<div class="cont">
+	<div class="cont" @click="() => router.push('/home')">
 		<img src="../assets/back.svg" alt="" />
 		<div class="label">{{ label }}</div>
 	</div>
 </template>
 
 <script>
+	import {useRouter} from "vue-router";
 	export default {
 		name: "BackButton",
 		props: ["label"],
-		data() {
-			return {};
+		setup() {
+			const router = useRouter();
+			return {
+				router,
+			};
 		},
 	};
 </script>
