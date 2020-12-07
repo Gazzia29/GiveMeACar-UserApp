@@ -9,6 +9,7 @@ import Contact from "@/views/Contact.vue";
 import ModifierCompteClient from "@/views/ModifierCompteClient.vue";
 import Inscription from "@/views/Inscription.vue";
 import Monstre from "@/views/Monstre.vue";
+import Plein from "@/views/Plein.vue";
 
 const routes: Array<RouteRecordRaw> = [
 	{
@@ -64,6 +65,11 @@ const routes: Array<RouteRecordRaw> = [
 				path: "animaltotem",
 				component: Monstre,
 			},
+			{
+				name: "plein",
+				path: "plein",
+				component: Plein,
+			}
 		],
 	},
 ];

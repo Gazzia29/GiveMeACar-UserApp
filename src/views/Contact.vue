@@ -10,7 +10,7 @@
 					<div class="sinon">Sinon contactez nous :</div>
 				</div>
 
-				<div class="bloc">
+				<div class="bloc2">
 					<img src="../assets/equipeNantes.svg" alt="" />
 					<div class="Agence">Agence de Nantes</div>
 					<div class="rue">3 rue Boileau</div>
@@ -19,8 +19,8 @@
 				</div>
 				<div class="mail">
 					<img src="../assets/icons/mail.svg" alt="" />
-					<a href="mailto:contact.agencenantes@givemeacar.fr"
-						>contact.agencenantes@givemeacar.fr</a
+					<a href="mailto: contact.agencenantes@givemeacar.fr"
+						> contact.agencenantes@givemeacar.fr</a
 					>
 				</div>
 
@@ -53,15 +53,21 @@
 		padding-top: 20px;
 		background-color: #fcfcff;
 		padding: 32px 15px;
-		border-radius: 0 0 30px 30px;
+		border-radius: 30px;
 		flex-grow: 1;
 		display: flex;
 		flex-direction: column;
 		gap: 10px;
+		margin-top: 30px;
 	}
 	.bloc {
 		display: flex;
 		flex-direction: column;
+	}
+	.bloc2 {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
 	.mail {
 		color: #7d54f2;
@@ -74,4 +80,5 @@
 		border-radius: 10px;
 		overflow: hidden;
 	}
+	
 </style>
