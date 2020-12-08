@@ -4,8 +4,7 @@
 
 <script>
 	export default {
-		name: "avatar",
-		props: [],
+		name: "Avatar",
 	};
 </script>
 

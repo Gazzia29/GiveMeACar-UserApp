@@ -1,10 +1,10 @@
 <template>
-	<ion-page>
+	<ion-page>as
 		<ion-content :fullscreen="true">
 			<WelcomeBack></WelcomeBack>
 			<div class="greyBox" :class="location ? 'hasLocation' : ''">
-				<IonButton v-if="!location" color="secondary" class="button" router-link="/recherche">
-					<IonIcon :icon="search"></IonIcon>
+				<Bouton v-if="!location" couleur="secondary" class="button" router-link="/recherche">
+					<IonIcon :icon="search"></IeonIcon>
 					Trouver un véhicule
 				</IonButton>
 				<LocationCard v-if="location" :location="location"></LocationCard>
@@ -23,25 +23,26 @@
 </template>
 
 <script lang="ts">
-	import {IonPage, IonContent, IonButton, IonIcon} from "@ionic/vue";
+	import {IonPage, IonContent, IonIcon} from "@ionic/vue";
 	import WelcomeBack from "@/components/WelcomeBack.vue";
 	import List from "@/components/List.vue";
 	import Card from "@/components/Card.vue";
 	import CardText from "@/components/CardText.vue";
 	import CardImage from "@/components/CardImage.vue";
 	import LocationCard from "@/components/LocationCard.vue";
+	import Bouton from "@/components/Bouton.vue";
 	import {search} from "ionicons/icons";
 
-	import {cars} from "@/cars.ts";
+	import {cars} from "@/data.ts";
 
 	export default {
 		name: "Accueil",
 		components: {
 			IonContent,
+			WelcomeBack,
 			IonPage,
 			IonButton,
 			IonIcon,
-			WelcomeBack,
 			List,
 			Card,
 			CardText,

@@ -1,53 +1,54 @@
 <template>
-    <ion-page>
+	<ion-page>
 		<ion-content :fullscreen="true">
-            <div class="plein">
-                <div class="bloc">
-                    <div class="penser">Avez-vous pensé à faire le plein?</div>
-                        <div class="somme">
-                        <Champ texte="Somme"></Champ></div>
-                        <div class="bouton"></div>
-                        <IonButton class="button" color="primary">Transmettre un justificatif</IonButton>    
-                        </div>
-                </div>
-        </ion-content>
+			<div class="plein">
+				<div class="bloc">
+					<div class="penser">Avez-vous pensé à faire le plein?</div>
+					<div class="somme">
+						<Champ texte="Somme"></Champ>
+					</div>
+					<div class="button">
+						<IonButton class="button" color="primary">Transmettre un justificatif</IonButton>
+					</div>
+					<div class="button2">
+						<IonButton class="button2" fill="clear">Suivant</IonButton>
+					</div>
+				</div>
+			</div>
+		</ion-content>
 	</ion-page>
 </template>
 
 <script>
-    import {IonPage, IonContent, IonButton} from "@ionic/vue";
-    import Champ from "@/components/Champ.vue";
-    export default {
-        name: "plein",
-        components: {
-            IonPage,
-            IonContent,
-            IonButton,
-            Champ,
-        },
-        };
-    
+	import {IonPage, IonContent, IonButton} from "@ionic/vue";
+	import ChampPlaceHolder from "@/components/ChampPlaceHolder.vue";
+	export default {
+		name: "plein",
+		components: {
+			IonPage,
+			IonContent,
+			IonButton,
+			Champ: ChampPlaceHolder,
+		},
+	};
 </script>
 
 <style scoped>
-.plein {
-        margin-top : 30px;
-		background-color: #fcfcff;
+	.plein {
+		background-color: #f1f1fa;
 		padding: 20px;
-		border-radius: 30px 30px 0 0;
 		display: flex;
 		flex-direction: column;
-        margin-bottom : 30px;
-		
+		height: calc(100% + 1px);
 	}
-    
-.penser {
-    font-weight: bold;
+
+	.penser {
+		font-weight: bold;
 		font-size: 19px;
 		color: #161719;
 		margin-bottom: 7px;
-    }
-.button {
+	}
+	.button {
 		--box-shadow: "none";
 		width: 100%;
 		box-sizing: content-box;
@@ -55,8 +56,20 @@
 		border-radius: 10px;
 		overflow: hidden;
 	}
-
-.somme {
-margin-bottom : 40px;
-    }
-    </style>
+	.button2 {
+		--box-shadow: "none";
+		width: 100%;
+		box-sizing: content-box;
+		height: 45px;
+		border-radius: 10px;
+		color: #7d54f2;
+		display: flex;
+		gap: 60px;
+		justify-content: right;
+		align-items: right;
+		text-align: right;
+	}
+	.somme {
+		margin-bottom: 40px;
+	}
+</style>

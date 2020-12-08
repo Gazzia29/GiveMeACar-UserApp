@@ -1,6 +1,4 @@
-export const reservation: any[] = [
-	
-]
+export const reservation: any[] = [];
 
 export const cars: any[] = [
 	{

@@ -2,18 +2,18 @@
 	<div class="inscription">
 		<Champ texte="email"></Champ>
 		<Champ texte="mot de passe"></Champ>
-		<Champ texte="lol"></Champ>
-		<Champ texte="chocolaid"></Champ>
-		<Champ texte="zefze"></Champ>
+		<Champ texte="date de naissance"></Champ>
+		<Champ texte="code postal"></Champ>
+		<Champ texte="téléphone"></Champ>
+		<Champ texte="num de permis"></Champ>
 	</div>
 </template>
-
 <script>
-	import Champ from "@/components/Champ.vue";
+	import ChampPlaceHolder from "@/components/ChampPlaceHolder.vue";
 	export default {
 		name: "Inscription",
 		components: {
-			Champ,
+			Champ: ChampPlaceHolder,
 		},
 	};
 </script>

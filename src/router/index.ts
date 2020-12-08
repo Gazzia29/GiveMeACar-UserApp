@@ -69,7 +69,7 @@ const routes: Array<RouteRecordRaw> = [
 				name: "plein",
 				path: "plein",
 				component: Plein,
-			}
+			},
 		],
 	},
 ];

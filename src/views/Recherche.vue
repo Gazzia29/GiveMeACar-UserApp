@@ -24,7 +24,7 @@
 <script lang="ts">
 	import {IonPage, IonContent, IonButton, IonIcon} from "@ionic/vue";
 	import {filter} from "ionicons/icons";
-	import {cars} from "@/cars.ts";
+	import {cars} from "@/data.ts";
 
 	import List from "@/components/List.vue";
 	import Card from "@/components/Card.vue";

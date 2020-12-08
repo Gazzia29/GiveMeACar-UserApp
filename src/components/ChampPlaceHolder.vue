@@ -4,7 +4,7 @@
 
 <script>
 	export default {
-		name: "Champ",
+		name: "ChampPlaceHolder",
 		props: ["texte"],
 	};
 </script>

@@ -1,35 +1,47 @@
 <template>
-	<div class="cont">
-		<Avatar></Avatar>
-		<div class="bloc">
-			<ChampEdit label="Nom" valeur="Jean-Marc"></ChampEdit>
-			<ChampEdit label="Email" valeur="jpfoucault@gmail.com"></ChampEdit>
-			<ChampEdit label="Téléphone" valeur="0679655"></ChampEdit>
-		</div>
-		<div class="adresse">
-			<ChampEdit label="Numéro et rue" valeur="67 rue du marché"></ChampEdit>
+	<ion-page>
+		<ion-content :fullscreen="true">
+			<div class="cont">
+				<Avatar></Avatar>
+				<div class="formulaire">
+					<GroupeDeChamps titre="Contact">
+						<Champ label="Nom" valeur="Jean-Marc"></Champ>
+						<Champ label="Email" valeur="jpfoucault@gmail.com"></Champ>
+						<Champ label="Téléphone" valeur="0679655"></Champ>
+					</GroupeDeChamps>
 
-			<ChampEdit label="Code Postal" valeur="44000"></ChampEdit>
-			<ChampEdit label="Ville" valeur="Nantes"></ChampEdit>
-		</div>
-		<div class="permis">
-			<ChampEdit label="Numéro de permis" valeur="*****98"></ChampEdit>
+					<GroupeDeChamps titre="Adresse">
+						<Champ label="Numéro et rue" valeur="67 rue du marché"></Champ>
+						<Champ label="Code Postal" valeur="44000"></Champ>
+						<Champ label="Ville" valeur="Nantes"></Champ>
+					</GroupeDeChamps>
 
-			<ChampEdit label="Date d'expiration" valeur="24/**/****"></ChampEdit>
-			<ChampEdit label="Date de délivrance" valeur="24/**/****"></ChampEdit>
-		</div>
-	</div>
+					<GroupeDeChamps titre="Permis">
+						<Champ label="Numéro de permis" valeur="*****98"></Champ>
+						<Champ label="Date d'expiration" valeur="24/**/****"></Champ>
+						<Champ label="Date de délivrance" valeur="24/**/****"></Champ>
+					</GroupeDeChamps>
+				</div>
+			</div>
+		</ion-content>
+	</ion-page>
 </template>
 
 <script>
-	import ChampEdit from "@/components/ChampEdit.vue";
+	import {IonPage, IonContent} from "@ionic/vue";
+	import ChampLabel from "@/components/ChampLabel.vue";
 	import Avatar from "@/components/Avatar.vue";
+	import GroupeDeChamps from "@/components/GroupeDeChamps.vue";
+	import Bouton from "@/components/Bouton.vue";
 	export default {
-		name: "ChampEdit",
-		props: ["value"],
+		name: "ChampLabel",
 		components: {
 			Avatar,
-			ChampEdit,
+			Champ: ChampLabel,
+			IonPage,
+			IonContent,
+			GroupeDeChamps,
+			Bouton,
 		},
 	};
 </script>

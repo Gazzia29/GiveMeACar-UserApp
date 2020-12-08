@@ -14,7 +14,7 @@
 <script>
 	import {IonPage, IonContent} from "@ionic/vue";
 	import BackButton from "@/components/BackButton.vue";
-	import {cars} from "@/cars.ts";
+	import {cars} from "@/data.ts";
 
 	export default {
 		name: "Voiture",

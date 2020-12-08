@@ -8,7 +8,6 @@
 				</div>
 				<div class="email">jpfourcault@gmail.com</div>
 				<CompteMenu></CompteMenu>
-				<Champ></Champ>
 			</div>
 		</ion-content>
 	</ion-page>
