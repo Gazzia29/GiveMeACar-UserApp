@@ -14,8 +14,9 @@
 
 <style scoped>
 	.etiquette {
-		font-size: 10px;
+		font-size: 12px;
 		color: white;
+		line-height: 17px;
 	}
 	input {
 		background-color: white;
@@ -23,5 +24,6 @@
 		border-radius: 9px;
 		box-sizing: border-box;
 		padding: 10px 21px;
+		width: 100%;
 	}
 </style>

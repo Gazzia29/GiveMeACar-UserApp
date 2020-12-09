@@ -1,26 +1,32 @@
 <template>
-	<IonButton v-if="route" :color="realCouleur" :router-link="route ? route : null"
-		><slot></slot
+	<IonButton :color="realCouleur" :router-link="route ? route : null">
+		<IonIcon v-if="icone" class="buttonIcon" :icon="iconData"></IonIcon>
+		<slot></slot
 	></IonButton>
-	<!-- <IonButton v-if="!route"><slot></slot></IonButton> -->
 </template>
 
 <script>
-	import {IonButton} from "@ionic/vue";
+	import {IonButton, IonIcon} from "@ionic/vue";
+	import * as icons from "ionicons/icons";
+
 	export default {
 		name: "Bouton",
-		props: ["couleur", "texte", "route"],
-		components: {IonButton},
+		props: ["couleur", "route", "icone"],
+		components: {IonButton, IonIcon},
 		methods: {
 			getCouleur: (c) => {
+				console.log("c :>> ", c);
 				if (c == "vert") {
 					return "secondary";
+				} else if (c == "blanc") {
+					return "white";
 				} else return "primary";
 			},
 		},
 		data() {
 			return {
 				realCouleur: this.getCouleur(this.couleur),
+				iconData: this.icone ? icons[this.icone] : null,
 			};
 		},
 	};
@@ -34,5 +40,15 @@
 		height: 45px;
 		border-radius: 10px;
 		overflow: hidden;
+		flex: 0 0 auto;
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 23px;
+		letter-spacing: 0.3px;
+	}
+
+	.buttonIcon {
+		margin-right: 7px;
+		height: 16px;
 	}
 </style>

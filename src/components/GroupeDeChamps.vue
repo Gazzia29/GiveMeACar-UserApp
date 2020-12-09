@@ -18,11 +18,13 @@
 	.groupe {
 		display: flex;
 		flex-direction: column;
-		width: min-content;
+		width: 100%;
 	}
 	.titre {
 		font-weight: bold;
-		font-size: 10px;
+		font-size: 12px;
+
+		line-height: 17px;
 		color: #ffffff;
 		text-transform: uppercase;
 	}
@@ -30,5 +32,9 @@
 	.bloc_blanc {
 		background: rgba(243, 240, 255, 0.16);
 		border-radius: 5px;
+		padding: 14px 21px;
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
 	}
 </style>

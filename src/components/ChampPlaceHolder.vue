@@ -13,5 +13,6 @@
 	.inscription {
 		background-color: greyBox;
 		border-radius: 10px;
+		flex-direction: column;
 	}
 </style>

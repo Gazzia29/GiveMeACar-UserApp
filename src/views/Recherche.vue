@@ -2,9 +2,9 @@
 	<ion-page>
 		<ion-content :fullscreen="true">
 			<div class="head">
-				<IonButton color="white" class="button"
-					><IonIcon :icon="filter" class="buttonIcon"></IonIcon>filtres</IonButton
-				>
+				<Bouton couleur="blanc" icone="filter">
+					filtres
+				</Bouton>
 			</div>
 			<div class="greyBox">
 				<List label="Véhicules disponibles" class="list">
@@ -22,10 +22,10 @@
 </template>
 
 <script lang="ts">
-	import {IonPage, IonContent, IonButton, IonIcon} from "@ionic/vue";
-	import {filter} from "ionicons/icons";
+	import {IonPage, IonContent} from "@ionic/vue";
 	import {cars} from "@/data.ts";
 
+	import Bouton from "@/components/Bouton.vue";
 	import List from "@/components/List.vue";
 	import Card from "@/components/Card.vue";
 	import CardText from "@/components/CardText.vue";
@@ -36,15 +36,11 @@
 		components: {
 			IonContent,
 			IonPage,
-			IonButton,
-			IonIcon,
+			Bouton,
 			List,
 			Card,
 			CardText,
 			CardImage,
-		},
-		setup() {
-			return {filter};
 		},
 		data() {
 			return {
@@ -69,17 +65,6 @@
 		flex-direction: column;
 		/* justify-content: center; */
 		align-items: center;
-	}
-	.button {
-		--box-shadow: "none";
-		width: 100%;
-		box-sizing: content-box;
-		height: 45px;
-		border-radius: 10px;
-		overflow: hidden;
-	}
-	.buttonIcon {
-		margin-right: 10px;
 	}
 	.list {
 		margin-top: 15px;

@@ -7,12 +7,10 @@
 					<div class="somme">
 						<Champ texte="Somme"></Champ>
 					</div>
-					<div class="button">
-						<IonButton class="button" color="primary">Transmettre un justificatif</IonButton>
-					</div>
-					<div class="button2">
-						<IonButton class="button2" fill="clear">Suivant</IonButton>
-					</div>
+					<Bouton couleur="violet">Envoyer un justificatif</Bouton>
+				</div>
+				<div class="buttonWrapper">
+					<TextBouton couleur="violet">Suivant</TextBouton>
 				</div>
 			</div>
 		</ion-content>
@@ -20,14 +18,18 @@
 </template>
 
 <script>
-	import {IonPage, IonContent, IonButton} from "@ionic/vue";
+	import TextBouton from "@/components/TextBouton.vue";
+	import Bouton from "@/components/Bouton.vue";
+
+	import {IonPage, IonContent} from "@ionic/vue";
 	import ChampPlaceHolder from "@/components/ChampPlaceHolder.vue";
 	export default {
 		name: "plein",
 		components: {
 			IonPage,
 			IonContent,
-			IonButton,
+			Bouton,
+			TextBouton,
 			Champ: ChampPlaceHolder,
 		},
 	};
@@ -40,6 +42,12 @@
 		display: flex;
 		flex-direction: column;
 		height: calc(100% + 1px);
+		justify-content: space-between;
+		align-items: flex-end;
+	}
+
+	.bloc {
+		width: 100%;
 	}
 
 	.penser {
@@ -48,25 +56,12 @@
 		color: #161719;
 		margin-bottom: 7px;
 	}
-	.button {
-		--box-shadow: "none";
-		width: 100%;
-		box-sizing: content-box;
-		height: 45px;
-		border-radius: 10px;
-		overflow: hidden;
-	}
-	.button2 {
-		--box-shadow: "none";
-		width: 100%;
-		box-sizing: content-box;
-		height: 45px;
-		border-radius: 10px;
-		color: #7d54f2;
+
+	.buttonWrapper {
 		display: flex;
 		gap: 60px;
 		justify-content: right;
-		align-items: right;
+		align-items: bottom;
 		text-align: right;
 	}
 	.somme {

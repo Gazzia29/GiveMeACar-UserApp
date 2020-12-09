@@ -1,87 +1,115 @@
 <template>
 	<ion-page>
-		<ion-content :fullscreen="true">
+		<ion-content :fullscreen="true" class="pageContent">
 			<div class="contact">
 				<div class="bloc">
 					<div class="questions">Des questions?</div>
 					<div class="faq">
-						<Item texte="Avez-vous pensé à consulter notre F.A.Q?"></Item>
+						<Item texte="Avez-vous consulté notre F.A.Q?"></Item>
 					</div>
 					<div class="sinon">Sinon contactez nous :</div>
 				</div>
 
-				<div class="bloc2">
-					<img src="../assets/equipeNantes.svg" alt="" />
-					<div>
-						<div class="">
-							<div class="Agence">Agence de Nantes</div>
-							<div class="rue">3 rue Boileau</div>
-							<div class="ville">44000 NANTES</div>
-							<div class="telephone">02 40 56 90 78</div>
+				<div class="bloc equipe">
+					<div class="infosHaut">
+						<img src="../assets/equipeNantes.svg" alt="" />
+						<div class="identite">
+							<div class="agenceNom">Agence de Nantes</div>
+							<div class="adresse">
+								<div class="rue">3 rue Boileau</div>
+								<div class="ville">44000 Nantes</div>
+								<div class="telephone">02 40 56 90 78</div>
+							</div>
 						</div>
 					</div>
+					<div class="mail">
+						<img src="../assets/icons/mail.svg" alt="" />
+						<a href="mailto: contact.agencenantes@givemeacar.fr"
+							>contact.agencenantes@givemeacar.fr</a
+						>
+					</div>
 				</div>
-				<div class="mail">
-					<img src="../assets/icons/mail.svg" alt="" />
-					<a href="mailto: contact.agencenantes@givemeacar.fr">
-						contact.agencenantes@givemeacar.fr</a
-					>
-				</div>
+				<img class="map" src="../assets/mapAgenceNantes.svg" alt="" />
 
-				<div class="map">
-					<img src="../assets/mapAgenceNantes.svg" alt="" />
-				</div>
-
-				<IonButton class="button" color="secondary">Appeler un conseiller</IonButton>
+				<Bouton couleur="vert">Appeler l'agence</Bouton>
 			</div>
 		</ion-content>
 	</ion-page>
 </template>
 
 <script>
-	import Bouton from "@/components/Bouton.vue";
 	import {IonPage, IonContent} from "@ionic/vue";
+	import Bouton from "@/components/Bouton.vue";
 	import CompteMenuItem from "@/components/CompteMenuItem.vue";
 	export default {
 		name: "Contact",
 		components: {
 			IonPage,
 			IonContent,
-			IonButton,
+			Bouton,
 			Item: CompteMenuItem,
 		},
 	};
 </script>
 
 <style scoped>
+	.pageContent {
+		--offset-bottom: 0px !important;
+		overflow: auto;
+	}
 	.contact {
-		padding-top: 20px;
-		background-color: #f1f1fa;
-		padding: 32px 15px;
-		height: calc(100% + 1px);
 		display: flex;
 		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 20px;
+
+		background-color: #f1f1fa;
 		gap: 10px;
+		/* align-items: flex-end; */
 	}
 	.bloc {
 		display: flex;
 		flex-direction: column;
+		background-color: white;
+		border-radius: 10px;
+		padding: 17px;
+		width: 100%;
 	}
-	.bloc2 {
+	.bloc.equipe {
 		display: flex;
-		justify-content: space-between;
+		flex-direction: column;
+		gap: 14px;
+	}
+	.bloc.equipe .infosHaut {
+		display: flex;
+		gap: 10px;
+		flex-direction: row;
+		align-items: center;
+	}
+	.bloc.equipe .infosHaut .identite {
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+	}
+	.agenceNom {
+		font-weight: 600;
+		font-size: 14px;
+		line-height: 90%;
+	}
+	.adresse {
+		font-size: 14px;
+		line-height: 108.5%;
 	}
 
 	.mail {
 		color: #7d54f2;
-		gap: 10px;
 	}
-	.button {
-		--box-shadow: "none";
+	.mail a {
+		margin-left: 8px;
+	}
+	.map {
+		flex: 0 0 auto;
 		width: 100%;
-		box-sizing: content-box;
-		height: 45px;
-		border-radius: 10px;
-		overflow: hidden;
 	}
 </style>

@@ -1,13 +1,13 @@
 <template>
 	<ion-page>
-		<ion-content :fullscreen="true">
+		<ion-content :fullscreen="true" class="pageContent">
 			<div class="cont">
-				<Avatar></Avatar>
+				<Avatar class="avatar"></Avatar>
 				<div class="formulaire">
 					<GroupeDeChamps titre="Contact">
 						<Champ label="Nom" valeur="Jean-Marc"></Champ>
 						<Champ label="Email" valeur="jpfoucault@gmail.com"></Champ>
-						<Champ label="Téléphone" valeur="0679655"></Champ>
+						<Champ label="Téléphone" valeur="0679659875"></Champ>
 					</GroupeDeChamps>
 
 					<GroupeDeChamps titre="Adresse">
@@ -22,6 +22,7 @@
 						<Champ label="Date de délivrance" valeur="24/**/****"></Champ>
 					</GroupeDeChamps>
 				</div>
+				<Bouton couleur="vert">Enregistrer</Bouton>
 			</div>
 		</ion-content>
 	</ion-page>
@@ -46,4 +47,26 @@
 	};
 </script>
 
-<style scoped></style>
+<style scoped>
+	.pageContent {
+		--offset-bottom: 0px !important;
+		overflow: auto;
+	}
+	.cont {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 30px;
+	}
+	.formulaire {
+		width: 100%;
+		margin-bottom: 15px;
+		display: flex;
+		flex-direction: column;
+		gap: 7px;
+	}
+	.avatar {
+		margin-bottom: 15px;
+	}
+</style>

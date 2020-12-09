@@ -1,12 +1,11 @@
 <template>
-	<ion-page>as
+	<ion-page>
 		<ion-content :fullscreen="true">
 			<WelcomeBack></WelcomeBack>
 			<div class="greyBox" :class="location ? 'hasLocation' : ''">
-				<Bouton v-if="!location" couleur="secondary" class="button" router-link="/recherche">
-					<IonIcon :icon="search"></IeonIcon>
+				<Bouton v-if="!location" couleur="vert" route="/recherche" icone="search">
 					Trouver un véhicule
-				</IonButton>
+				</Bouton>
 				<LocationCard v-if="location" :location="location"></LocationCard>
 				<List label="Réservations passées" class="list">
 					<Card v-for="car in cars" :key="car" :id="car.id">
@@ -23,7 +22,7 @@
 </template>
 
 <script lang="ts">
-	import {IonPage, IonContent, IonIcon} from "@ionic/vue";
+	import {IonPage, IonContent} from "@ionic/vue";
 	import WelcomeBack from "@/components/WelcomeBack.vue";
 	import List from "@/components/List.vue";
 	import Card from "@/components/Card.vue";
@@ -31,7 +30,6 @@
 	import CardImage from "@/components/CardImage.vue";
 	import LocationCard from "@/components/LocationCard.vue";
 	import Bouton from "@/components/Bouton.vue";
-	import {search} from "ionicons/icons";
 
 	import {cars} from "@/data.ts";
 
@@ -41,18 +39,12 @@
 			IonContent,
 			WelcomeBack,
 			IonPage,
-			IonButton,
-			IonIcon,
+			Bouton,
 			List,
 			Card,
 			CardText,
 			CardImage,
 			LocationCard,
-		},
-		setup() {
-			return {
-				search,
-			};
 		},
 		data() {
 			return {
@@ -79,14 +71,7 @@
 		height: calc(100% - 60px);
 		margin-top: 60px;
 	}
-	.button {
-		--box-shadow: "none";
-		width: 100%;
-		box-sizing: content-box;
-		height: 45px;
-		border-radius: 10px;
-		overflow: hidden;
-	}
+
 	.list {
 		margin-top: 15px;
 	}

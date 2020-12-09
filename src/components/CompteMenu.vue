@@ -3,7 +3,7 @@
 		<div class="bloc">
 			<div class="blocTitle">Paramètres du compte</div>
 			<div class="blocItems">
-				<Item texte="Editer mon profil"></Item>
+				<Item texte="Editer mon profil" @click="() => router.push('/compte/edit')"></Item>
 				<Item texte="Notifications mail"></Item>
 				<Item texte="Rappels de location"></Item>
 				<Item texte="Informations de paiement"></Item>
@@ -21,11 +21,17 @@
 </template>
 
 <script>
+	import {useRouter} from "vue-router";
 	import CompteMenuItem from "@/components/CompteMenuItem.vue";
 	export default {
 		name: "CompteMenu",
 		components: {
 			Item: CompteMenuItem,
+		},
+		setup() {
+			return {
+				router: useRouter(),
+			};
 		},
 	};
 </script>

@@ -19,16 +19,16 @@ export const cars: any[] = [
 		img:
 			"https://upload.wikimedia.org/wikipedia/commons/a/a8/Peugeot_306_%28rear_left%29%2C_Denpasar.jpg",
 	},
-	{
-		//en cours de location
-		id: 3,
-		name: "Renault Clio",
-		startDate: new Date(),
-		estimatedEndDate: new Date(),
-		realEndDate: null,
-		img:
-			"https://img-4.linternaute.com/rp4-HkgdRmV9N9YeB0iEW3xg3nE=/1240x/smart/3ade6a5e0e414104854d3c521ec0e2bc/ccmcms-linternaute/12866343.jpg",
-	},
+	// {
+	// 	//en cours de location
+	// 	id: 3,
+	// 	name: "Renault Clio",
+	// 	startDate: new Date(),
+	// 	estimatedEndDate: new Date(),
+	// 	realEndDate: null,
+	// 	img:
+	// 		"https://img-4.linternaute.com/rp4-HkgdRmV9N9YeB0iEW3xg3nE=/1240x/smart/3ade6a5e0e414104854d3c521ec0e2bc/ccmcms-linternaute/12866343.jpg",
+	// },
 	{
 		id: 4,
 		name: "C4 Picasso",
