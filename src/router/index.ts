@@ -11,6 +11,7 @@ import Inscription from "@/views/Inscription.vue";
 import Monstre from "@/views/Monstre.vue";
 import Plein from "@/views/Plein.vue";
 import FAQ from "@/views/FAQ.vue";
+import Observations from "@/views/Observations.vue";
 
 const routes: Array<RouteRecordRaw> = [
 	{
@@ -75,6 +76,11 @@ const routes: Array<RouteRecordRaw> = [
 				name:"contact/FAQ",
 				path:"contact/FAQ",
 				component: FAQ,
+			},
+			{
+				name: "plein/observations",
+				path: "plein/observations",
+				component: Observations,
 			},
 		],
 	},

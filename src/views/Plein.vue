@@ -10,7 +10,7 @@
 					<Bouton couleur="violet">Envoyer un justificatif</Bouton>
 				</div>
 				<div class="buttonWrapper">
-					<TextBouton couleur="violet">Suivant</TextBouton>
+					<TextBouton couleur="violet" @click="() => router.push('/plein/observations')">Suivant</TextBouton>
 				</div>
 			</div>
 		</ion-content>
@@ -20,9 +20,9 @@
 <script>
 	import TextBouton from "@/components/TextBouton.vue";
 	import Bouton from "@/components/Bouton.vue";
-
 	import {IonPage, IonContent} from "@ionic/vue";
 	import ChampPlaceHolder from "@/components/ChampPlaceHolder.vue";
+	import {useRouter} from "vue-router";
 	export default {
 		name: "plein",
 		components: {
@@ -32,6 +32,11 @@
 			TextBouton,
 			Champ: ChampPlaceHolder,
 		},
+		setup() { 
+			return {
+				router: useRouter(),
+			}
+		},	
 	};
 </script>
 
@@ -48,6 +53,8 @@
 
 	.bloc {
 		width: 100%;
+		flex-grow: 1;
+
 	}
 
 	.penser {
@@ -61,8 +68,9 @@
 		display: flex;
 		gap: 60px;
 		justify-content: right;
-		align-items: bottom;
+		align-items: flex-end;
 		text-align: right;
+		flex-grow: 1;
 	}
 	.somme {
 		margin-bottom: 40px;
