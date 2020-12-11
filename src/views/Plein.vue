@@ -10,7 +10,7 @@
 					<Bouton couleur="violet">Envoyer un justificatif</Bouton>
 				</div>
 				<div class="buttonWrapper">
-					<TextBouton couleur="violet" @click="() => router.push('/plein/observations')">Suivant</TextBouton>
+					<TextBouton couleur="violet" route='/finreservation/observations'>Suivant</TextBouton>
 				</div>
 			</div>
 		</ion-content>
@@ -25,6 +25,7 @@
 	import {useRouter} from "vue-router";
 	export default {
 		name: "plein",
+		props:[],
 		components: {
 			IonPage,
 			IonContent,

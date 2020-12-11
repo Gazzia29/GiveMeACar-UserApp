@@ -7,16 +7,20 @@
 					<div class="type">
 						<IonItem color="white">
 							<IonLabel>Type d'observation</IonLabel>
-							<IonSelect multiple="true" color="white" cancel-text="Annuler" ok-text="Ok !">
-								<IonSelectOption value="fzefz">fezfze</IonSelectOption>
-								<IonSelectOption value="plaisir et volupté">plaisir et volupté</IonSelectOption>
-								<IonSelectOption value="na voiture né cassée">na voiture né cassée</IonSelectOption>
+							<IonSelect multiple="true" :interface-options="customBox" color="white" cancel-text="Annuler" ok-text="Ok !">
+								<IonSelectOption value="Défaillance technique">Défaillance technique</IonSelectOption>
+								<IonSelectOption value="Propreté">Propreté</IonSelectOption>
+								<IonSelectOption value="Accident">Accident</IonSelectOption>
+								<IonSelectOption value="Impact bris de glace">Impact bris de glace</IonSelectOption>
+								<IonSelectOption value="Impact carrosserie">Impact carrosserie</IonSelectOption>
+								<IonSelectOption value="Portes bloquées">Portes bloquées</IonSelectOption>
+								<IonSelectOption value="Autres">Autres</IonSelectOption>
 							</IonSelect>
                         </IonItem>
 						<Champ texte="Observations"></Champ>
 					</div>
                     <div class="buttonWrapper">
-						<TextBouton couleur="violet" class="boutonADroite">Suivant</TextBouton>
+						<TextBouton couleur="violet" class="boutonADroite" route='/finreservation/facture'>Suivant</TextBouton>
 					</div>
 				</div>
 				
@@ -39,6 +43,14 @@ import {IonSelect, IonSelectOption, IonLabel, IonItem} from "@ionic/vue"
 			IonLabel,
 			IonItem
 		},
+		setup() {
+			const customBox = {
+				cssClass: 'customBox'
+			};
+			return {
+				customBox
+			}
+		}
     }
 </script>
 
@@ -92,5 +104,17 @@ import {IonSelect, IonSelectOption, IonLabel, IonItem} from "@ionic/vue"
 	}
 	.boutonADroite{
 		width: min-content;
+	}
+</style>
+
+<style>
+	.alert-wrapper.ion-overlay-wrapper {
+		background: white !important;
+	}
+	.alert-checkbox-icon.sc-ion-alert-ios{
+		background-color:white;
+	}
+	[aria-checked="true"].sc-ion-alert-ios .alert-checkbox-icon.sc-ion-alert-ios .alert-checkbox-inner.sc-ion-alert-ios{
+		border-color:white;
 	}
 </style>

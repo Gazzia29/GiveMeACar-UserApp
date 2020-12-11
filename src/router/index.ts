@@ -68,8 +68,12 @@ const routes: Array<RouteRecordRaw> = [
 				component: Monstre,
 			},
 			{
-				name: "plein",
-				path: "plein",
+				path: "finreservation",
+				redirect: "/finreservation/plein"
+			},
+			{
+				name: "finreservation/plein",
+				path: "finreservation/plein",
 				component: Plein,
 			},
 			{
@@ -78,8 +82,8 @@ const routes: Array<RouteRecordRaw> = [
 				component: FAQ,
 			},
 			{
-				name: "plein/observations",
-				path: "plein/observations",
+				name: "finreservation/observations",
+				path: "finreservation/observations",
 				component: Observations,
 			},
 		],
