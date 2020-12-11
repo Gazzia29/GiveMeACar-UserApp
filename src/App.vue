@@ -16,3 +16,9 @@
 		},
 	});
 </script>
+
+<style>
+	body{
+		color: #34313A;
+	}
+</style>

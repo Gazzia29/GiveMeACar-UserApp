@@ -1,6 +1,6 @@
 <template>
 	<div></div>
-	<ion-thumbnail class="rounded image" slot="start">
+	<ion-thumbnail class="rounded image">
 		<ion-img class="rounded" :src="path"></ion-img>
 	</ion-thumbnail>
 </template>
