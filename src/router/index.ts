@@ -10,6 +10,7 @@ import ModifierCompteClient from "@/views/ModifierCompteClient.vue";
 import Inscription from "@/views/Inscription.vue";
 import Monstre from "@/views/Monstre.vue";
 import Plein from "@/views/Plein.vue";
+import FAQ from "@/views/FAQ.vue";
 
 const routes: Array<RouteRecordRaw> = [
 	{
@@ -69,6 +70,11 @@ const routes: Array<RouteRecordRaw> = [
 				name: "plein",
 				path: "plein",
 				component: Plein,
+			},
+			{
+				name:"contact/FAQ",
+				path:"contact/FAQ",
+				component: FAQ,
 			},
 		],
 	},

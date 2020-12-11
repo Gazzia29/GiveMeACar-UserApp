@@ -5,7 +5,7 @@
 				<div class="bloc">
 					<div class="questions">Des questions?</div>
 					<div class="faq">
-						<Item texte="Avez-vous consulté notre F.A.Q?"></Item>
+						<Item texte="Avez-vous consulté notre F.A.Q?" @click="() => router.push('/contact/FAQ')"></Item>
 					</div>
 					<div class="sinon">Sinon contactez nous :</div>
 				</div>
@@ -40,6 +40,7 @@
 <script>
 	import {IonPage, IonContent} from "@ionic/vue";
 	import Bouton from "@/components/Bouton.vue";
+	import {useRouter} from "vue-router";
 	import CompteMenuItem from "@/components/CompteMenuItem.vue";
 	export default {
 		name: "Contact",
@@ -48,6 +49,11 @@
 			IonContent,
 			Bouton,
 			Item: CompteMenuItem,
+		},
+		setup() { 
+			return {
+				router: useRouter(),
+			}
 		},
 	};
 </script>
