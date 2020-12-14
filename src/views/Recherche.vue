@@ -6,6 +6,10 @@
 					filtres
 				</Bouton>
 			</div>
+			<div class="map">
+                    <Map></Map>
+			</div>
+
 			<div class="greyBox">
 				<List label="Véhicules disponibles" class="list">
 					<Card v-for="car in cars" :key="car" :id="car.id">
@@ -16,6 +20,9 @@
 						<CardImage :path="car.img"></CardImage>
 					</Card>
 				</List>
+				<div class="bouton">
+				<Bouton couleur="primary">Retour à l'accueil</Bouton>
+				</div>
 			</div>
 		</ion-content>
 	</ion-page>
@@ -24,12 +31,13 @@
 <script lang="ts">
 	import {IonPage, IonContent} from "@ionic/vue";
 	import {cars} from "@/data.ts";
-
+	import Map from "@/components/Map.vue";
 	import Bouton from "@/components/Bouton.vue";
 	import List from "@/components/List.vue";
 	import Card from "@/components/Card.vue";
 	import CardText from "@/components/CardText.vue";
 	import CardImage from "@/components/CardImage.vue";
+	
 
 	export default {
 		name: "Recherche",
@@ -41,6 +49,7 @@
 			Card,
 			CardText,
 			CardImage,
+			Map,
 		},
 		data() {
 			return {
@@ -55,8 +64,10 @@
 		padding: 10px 20px;
 	}
 	.greyBox {
+		z-index: 1;
+		position: relative;
 		background-color: #ececf5;
-		height: 100%;
+		height:70%;
 		border-top-left-radius: 30px;
 		border-top-right-radius: 30px;
 		padding: 20px;
@@ -65,8 +76,21 @@
 		flex-direction: column;
 		/* justify-content: center; */
 		align-items: center;
+		margin-top: -25px;
 	}
 	.list {
 		margin-top: 15px;
 	}
+	.map {
+		display: flex;
+		flex-direction: column;
+		height: 50%;
+		width: 100%;
+	}
+	.bouton {
+		display: flex;
+		flex-direction: column;
+		margin-top: 60px;
+	}
+
 </style>

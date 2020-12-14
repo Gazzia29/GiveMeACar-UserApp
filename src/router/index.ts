@@ -12,6 +12,8 @@ import Monstre from "@/views/Monstre.vue";
 import Plein from "@/views/Plein.vue";
 import FAQ from "@/views/FAQ.vue";
 import Observations from "@/views/Observations.vue";
+import PageDeGarde from "@/views/PageDeGarde.vue";
+import Selection from "@/views/Selection.vue";
 
 const routes: Array<RouteRecordRaw> = [
 	{
@@ -22,31 +24,37 @@ const routes: Array<RouteRecordRaw> = [
 				path: "",
 				redirect: "/home",
 			},
+		
 			{
 				name: "home",
 				path: "home",
 				component: Accueil,
 			},
+
 			{
 				name: "recherche",
 				path: "recherche",
 				component: Recherche,
 			},
+
 			{
 				name: "voiture",
 				path: "voiture",
 				redirect: "/voiture/1",
 			},
+
 			{
 				path: "voiture/:id",
 				component: Voiture,
 				props: true,
 			},
+
 			{
 				name: "compte",
 				path: "compte",
 				component: Compte,
 			},
+
 			{
 				name: "contact",
 				path: "contact",
@@ -57,6 +65,7 @@ const routes: Array<RouteRecordRaw> = [
 				path: "compte/edit",
 				component: ModifierCompteClient,
 			},
+
 			{
 				name: "inscription",
 				path: "inscription",
@@ -67,15 +76,18 @@ const routes: Array<RouteRecordRaw> = [
 				path: "animaltotem",
 				component: Monstre,
 			},
+
 			{
 				path: "finreservation",
 				redirect: "/finreservation/plein"
 			},
+
 			{
 				name: "finreservation/plein",
 				path: "finreservation/plein",
 				component: Plein,
 			},
+
 			{
 				name:"contact/FAQ",
 				path:"contact/FAQ",
@@ -86,6 +98,19 @@ const routes: Array<RouteRecordRaw> = [
 				path: "finreservation/observations",
 				component: Observations,
 			},
+			
+			{
+				name:"PageDeGarde",
+				path:"PageDeGarde",
+				component: PageDeGarde,
+			},
+
+			{
+				name:"Selection",
+				path:"Selection",
+				component: Selection,
+			},
+
 		],
 	},
 ];
