@@ -10,7 +10,6 @@
 
 <style scoped>
 	img {
-		border-radius: 10% 10% 0 0;
-	
+		border-radius: 30px 30px 0 0;
 	}
 </style>

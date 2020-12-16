@@ -1,6 +1,6 @@
 <template>
 	<ion-page>
-		<ion-content :fullscreen="true">
+		<ion-content :fullscreen="true" class="pageContent">
 			<div class="compte">
 				<BackButton label="Compte"></BackButton>
 				<div class="avatarCont">
@@ -31,6 +31,10 @@
 </script>
 
 <style scoped>
+	.pageContent {
+		--offset-bottom: 1px !important;
+		overflow: auto;
+	}
 	.compte {
 		height: 100%;
 		display: flex;

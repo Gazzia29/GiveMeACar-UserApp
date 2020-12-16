@@ -1,5 +1,5 @@
 <template>
-	<div class="card" @click="() => router.push('/voiture/' + id)">
+	<div class="card" @click="() => router.push('/reservation/' + id)">
 		<div class="content" :class="type && type == 'location' ? 'location' : ''">
 			<slot></slot>
 		</div>

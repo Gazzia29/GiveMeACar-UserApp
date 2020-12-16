@@ -14,7 +14,7 @@
 			<div class="blocTitle">Support</div>
 			<div class="blocItems">
 				<Item texte="A propos"></Item>
-				<Item texte="Mes FAQ"></Item>
+				<Item texte="Mes FAQ" @click="() => router.push('/contact/FAQ')"></Item>
 			</div>
 		</div>
 	</div>

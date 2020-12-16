@@ -7,28 +7,28 @@
 				</Bouton>
 			</div>
 			<div class="map">
-                    <Selection></Selection>
-                </div>
-            <div class="greyBox">
+				<Selection></Selection>
+			</div>
+			<div class="greyBox">
 				<div class="bloc">
 					<div class="choix">
 						<div class="photo">
-						<img src="../assets/C4.svg" alt="" />
+							<img src="../assets/C4.svg" alt="" />
 						</div>
 						<div class="voiture">
 							<div class="Modele">Citroën C4 Picasso</div>
-                        </div>
-						<div class="attributs">
-								<div class="portes">5 portes</div>
-								<div class="Boîte de vitesse">Manuelle</div>
-								<div class="Carburant">Essence</div>
-								<div class="Catégorie">Familiale</div>
-								<div class="Prix">30€ tarif de base</div>
 						</div>
-                        <Bouton couleur="vert" route='/PageDeGarde'>Se connecter</Bouton>
+						<div class="attributs">
+							<div class="portes">5 portes</div>
+							<div class="Boîte de vitesse">Manuelle</div>
+							<div class="Carburant">Essence</div>
+							<div class="Catégorie">Familiale</div>
+							<div class="Prix">30€ tarif de base</div>
+						</div>
+						<Bouton couleur="vert" route="/authentication">Se connecter</Bouton>
 					</div>
 				</div>
-            </div>
+			</div>
 		</ion-content>
 	</ion-page>
 </template>
@@ -46,11 +46,11 @@
 			Bouton,
 			Selection,
 		},
-		setup() { 
+		setup() {
 			return {
 				router: useRouter(),
-			}
-		},	
+			};
+		},
 	};
 </script>
 
@@ -61,8 +61,8 @@
 	.greyBox {
 		z-index: 1;
 		position: relative;
-		background-color: #F1F1FA;
-		height:70%;
+		background-color: #f1f1fa;
+		height: 70%;
 		border-top-left-radius: 30px;
 		border-top-right-radius: 30px;
 		padding: 20px;
@@ -78,7 +78,7 @@
 	}
 	.map {
 		display: flex;
-        flex-direction: column;
+		flex-direction: column;
 		height: 50%;
 	}
 	.bouton {
@@ -96,13 +96,13 @@
 		flex-direction: column;
 		align-items: center;
 	}
-    .greybox .bloc .choix .photo {
+	.greybox .bloc .choix .photo {
 		display: flex;
 		gap: 10px;
 		flex-direction: row;
 		align-items: center;
-        border-radius: 30px;
-    }
+		border-radius: 30px;
+	}
 
 	.greybox .bloc .choix .voiture {
 		display: flex;

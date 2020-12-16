@@ -1,12 +1,17 @@
 <template>
 	<ion-page>
-		<ion-content :fullscreen="true">
-			<WelcomeBack></WelcomeBack>
+		<ion-content :fullscreen="true" class="pageContent">
+			<WelcomeBack class="marginVertical"></WelcomeBack>
 			<div class="greyBox" :class="location ? 'hasLocation' : ''">
-				<Bouton v-if="!location" couleur="vert" route="/recherche" icone="search">
+				<!-- Si y'a pas de réservation -->
+				<Bouton v-if="!location" couleur="vert" route="/map" icone="search">
 					Trouver un véhicule
 				</Bouton>
+
+				<!-- Si y'en a une-->
 				<LocationCard v-if="location" :location="location"></LocationCard>
+
+				<!-- Tout le temps, la liste des rés° passées -->
 				<List label="Réservations passées" class="list">
 					<Card v-for="car in cars" :key="car" :id="car.id">
 						<CardText>
@@ -56,6 +61,14 @@
 </script>
 
 <style scoped>
+	.pageContent {
+		--offset-bottom: 1px !important;
+		overflow: auto;
+	}
+
+	.marginVertical {
+		margin: 10px 0;
+	}
 	.greyBox {
 		background-color: #ececf5;
 		height: 100%;
@@ -68,8 +81,8 @@
 		align-items: center;
 	}
 	.greyBox.hasLocation {
-		height: calc(100% - 60px);
-		margin-top: 60px;
+		height: calc(100% - 70px);
+		margin-top: 70px;
 	}
 
 	.list {

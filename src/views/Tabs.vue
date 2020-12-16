@@ -47,7 +47,7 @@
 				</ion-tab-button>
 				<ion-tab-button
 					tab="recherche"
-					href="/recherche"
+					href="/map"
 					:class="selectedTab == 'recherche' ? 'active' : ''"
 					v-on:click="selectedTab = 'recherche'"
 				>

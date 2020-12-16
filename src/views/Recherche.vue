@@ -1,13 +1,13 @@
 <template>
 	<ion-page>
-		<ion-content :fullscreen="true">
+		<ion-content :fullscreen="true" class="pageContent">
 			<div class="head">
 				<Bouton couleur="blanc" icone="filter">
 					filtres
 				</Bouton>
 			</div>
 			<div class="map">
-                    <Map></Map>
+				<Map></Map>
 			</div>
 
 			<div class="greyBox">
@@ -21,7 +21,7 @@
 					</Card>
 				</List>
 				<div class="bouton">
-				<Bouton couleur="primary">Retour à l'accueil</Bouton>
+					<Bouton couleur="primary">Retour à l'accueil</Bouton>
 				</div>
 			</div>
 		</ion-content>
@@ -37,7 +37,6 @@
 	import Card from "@/components/Card.vue";
 	import CardText from "@/components/CardText.vue";
 	import CardImage from "@/components/CardImage.vue";
-	
 
 	export default {
 		name: "Recherche",
@@ -60,6 +59,10 @@
 </script>
 
 <style scoped>
+	.pageContent {
+		--offset-bottom: 1px !important;
+		overflow: auto;
+	}
 	.head {
 		padding: 10px 20px;
 	}
@@ -67,7 +70,6 @@
 		z-index: 1;
 		position: relative;
 		background-color: #ececf5;
-		height:70%;
 		border-top-left-radius: 30px;
 		border-top-right-radius: 30px;
 		padding: 20px;
@@ -90,7 +92,6 @@
 	.bouton {
 		display: flex;
 		flex-direction: column;
-		margin-top: 60px;
+		margin-top: 20px;
 	}
-
 </style>
